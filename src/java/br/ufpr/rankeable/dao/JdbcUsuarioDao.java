@@ -9,7 +9,7 @@ import br.ufpr.rankeable.modelo.Usuario;
 import br.ufpr.rankeable.jdbc.MysqlConnectionFactory;
 
 import java.sql.Connection;
-import java.sql.Date;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -30,23 +30,22 @@ public class JdbcUsuarioDao {
     }
 
     public boolean existeUsuario(Usuario usuario) throws SQLException {
-        String sql = "Select from usuario where " + "(login) " + "values (?)";
-         try {
+        String sql = "select * from usuarios where " + "(usuario) " + "values (?)";
+         
+        
+        try {
             PreparedStatement stmt = connection.prepareStatement(sql);
             stmt.setString(1, usuario.getUsuario());
-            stmt.setString(2, usuario.getSenha());
+            //stmt.setString(2, usuario.getSenha());
             ResultSet rs = stmt.executeQuery();
-
              if (rs.next()) // Se existir registro  
-             {
+             {                
                  return true;
                  // Existe o usuario  
              } else {
                  return false;
                  // Nao existe o usuario  
              }
-
-
         } catch (SQLException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();

@@ -19,12 +19,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class LoginController {
     
-    @RequestMapping("loginForm")
+    @RequestMapping("/loginForm")
     public String loginForm() {
         return "formulario-login";
     }
  
-    @RequestMapping("efetuaLogin")
+    @RequestMapping("/efetuaLogin")
     public String efetuaLogin(Usuario usuario, HttpSession session) throws SQLException {
         if (new JdbcUsuarioDao().existeUsuario(usuario)) {
             session.setAttribute("usuarioLogado", usuario);

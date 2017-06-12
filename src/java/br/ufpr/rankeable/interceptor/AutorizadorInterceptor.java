@@ -19,16 +19,16 @@ public class AutorizadorInterceptor extends HandlerInterceptorAdapter {
             HttpServletResponse response,
             Object controller) throws Exception {
         String uri = request.getRequestURI();
-        if (uri.endsWith("loginForm")
-                || uri.endsWith("efetuaLogin")
-                || uri.contains("resources")) {
+        if (uri.endsWith("/loginForm")
+                || uri.endsWith("/efetuaLogin")
+                || uri.contains("/resources")) {
             return true;
         }
         if (request.getSession()
                 .getAttribute("usuarioLogado") != null) {
             return true;
         }
-        response.sendRedirect("loginForm");
+        response.sendRedirect("/Login_trabalho/loginForm");
         return false;
     }
 }
