@@ -24,4 +24,9 @@
     <welcome-file-list>
         <welcome-file>redirect.jsp</welcome-file>
     </welcome-file-list>
+    
+    <session-config>
+        <session-timeout>3</session-timeout>
+    </session-config>
+
 </web-app>

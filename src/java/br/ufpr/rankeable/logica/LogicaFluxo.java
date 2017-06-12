@@ -22,6 +22,7 @@ public class LogicaFluxo implements Navegacao {
     public Rankeavel getProximo() {
         //...
         pegadorDeRankeavel.getRankeaveis();
+        return null;
     }
 
     @Override

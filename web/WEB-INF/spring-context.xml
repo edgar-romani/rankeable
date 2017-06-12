@@ -33,5 +33,9 @@
     <bean name="indexController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
           p:viewName="index" />
+    <mvc:interceptors>
+        <bean class=
+    "br.upfr.rankeable.interceptor.AutorizadorInterceptor" />
+          </mvc:interceptors>
 
 </beans>
