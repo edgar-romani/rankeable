@@ -24,22 +24,27 @@ import java.util.List;
 public class JdbcUsuarioDao {
 
     private Connection connection;
+     
 
     public JdbcUsuarioDao() {
         connection = (new MysqlConnectionFactory()).getConnection();
     }
 
     public boolean existeUsuario(Usuario usuario) throws SQLException {
-        String sql = "select * from usuarios where " + "(usuario) " + "values (?)";
-         
-        
+      String sql = "select 1 from usuarios where nome = ? and senha = ? ";        
+       
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);
-            stmt.setString(1, usuario.getUsuario());
-            //stmt.setString(2, usuario.getSenha());
+            stmt.setString(1, usuario.getNome());
+            stmt.setString(2, usuario.getSenha());
+            
             ResultSet rs = stmt.executeQuery();
-             if (rs.next()) // Se existir registro  
-             {                
+             // Se existir registr
+            if (rs.next()){   
+                 //String nomeUsuario = rs.getString("nome");
+                // String senha = rs.getString("senha");
+                 
+                
                  return true;
                  // Existe o usuario  
              } else {
@@ -50,7 +55,6 @@ public class JdbcUsuarioDao {
             // TODO Auto-generated catch block
             e.printStackTrace();
             throw new RuntimeException(e);
-        }
-    
+        }     
     }
 }

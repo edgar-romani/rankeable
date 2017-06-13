@@ -13,17 +13,21 @@ import static javax.swing.text.StyleConstants.Size;
  */
     public class Usuario {
    
-    private String usuario;
+    private String nome;
     private String senha;
     
     private boolean finalizado;
 
-    public String getUsuario() {
-        return usuario;
+    public Usuario(){
+        super();
+    }
+    
+    public String getNome() {
+        return nome;
     }
 
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public String getSenha() {
