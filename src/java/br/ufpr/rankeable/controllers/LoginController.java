@@ -24,14 +24,23 @@ public class LoginController {
         return "formulario-login";
     }
  
+    @RequestMapping("/menu")
+    public String menu() {
+        return "menu";
+    }
     @RequestMapping("/efetuaLogin")
     public String efetuaLogin(Usuario usuario, HttpSession session) throws SQLException {
         if (new JdbcUsuarioDao().existeUsuario(usuario)) {
             session.setAttribute("usuarioLogado", usuario);
-            return "menu";      
+            return "menu";    
       
-        
         }
-        return "redirect:telaVotacao";
+        return "redirect:menu";
+        //return "redirect:telaVotacao";
     }
+    @RequestMapping("logout")
+    public String logout(HttpSession session) {
+        session.invalidate();
+        return "redirect:loginForm";
+}
 }

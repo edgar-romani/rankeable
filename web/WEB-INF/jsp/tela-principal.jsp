@@ -13,5 +13,7 @@
     </head>
     <body>
         <h1> <%-- <a href="votar?id=${}" --%> </h1>
+        <a href="logout">Sair do sistema</a>
     </body>
+    
 </html>

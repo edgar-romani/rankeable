@@ -21,7 +21,8 @@ import static javax.swing.text.StyleConstants.Size;
     public Usuario(){
         super();
     }
-    
+
+      
     public String getNome() {
         return nome;
     }
