@@ -9,10 +9,7 @@ import br.ufpr.rankeable.modelo.Rankeavel;
 import java.util.List;
 
 
-/**
- *
- * @author helio
- */
+
 public class LogicaFluxo implements Navegacao {
 
     private PegaRankeaveis pegadorDeRankeavel;

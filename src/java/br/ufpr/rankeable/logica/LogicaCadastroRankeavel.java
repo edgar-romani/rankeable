@@ -7,10 +7,7 @@ package br.ufpr.rankeable.logica;
 
 import br.ufpr.rankeable.modelo.Rankeavel;
 
-/**
- *
- * @author helio
- */
+
 public class LogicaCadastroRankeavel implements PegaRankeaveis {
 
     @Override

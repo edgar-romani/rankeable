@@ -7,10 +7,7 @@ package br.ufpr.rankeable.modelo;
 
 import static javax.swing.text.StyleConstants.Size;
 
-/**
- *
- * @author julio
- */
+
     public class Usuario {
    
     private String nome;

@@ -12,10 +12,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-/**
- *
- * @author julio
- */
+
 @Controller
 public class LoginController {
     
@@ -31,16 +28,17 @@ public class LoginController {
     @RequestMapping("/efetuaLogin")
     public String efetuaLogin(Usuario usuario, HttpSession session) throws SQLException {
         if (new JdbcUsuarioDao().existeUsuario(usuario)) {
-            session.setAttribute("usuarioLogado", usuario);
+            session.setAttribute("usuarioLogado", usuario.getNome());
             return "menu";    
       
         }
         return "redirect:menu";
         //return "redirect:telaVotacao";
     }
-    @RequestMapping("logout")
+    @RequestMapping("/logout")
     public String logout(HttpSession session) {
         session.invalidate();
         return "redirect:loginForm";
 }
+
 }

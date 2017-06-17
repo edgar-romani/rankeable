@@ -7,10 +7,7 @@ package br.ufpr.rankeable.modelo;
 
 import java.util.List;
 
-/**
- *
- * @author helio
- */
+
 public class Rankeavel {
     
     private String nome;

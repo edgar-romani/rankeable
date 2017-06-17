@@ -17,10 +17,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-/**
- *
- * @author CCE
- */
+
 public class JdbcUsuarioDao {
 
     private Connection connection;
@@ -31,7 +28,7 @@ public class JdbcUsuarioDao {
     }
 
     public boolean existeUsuario(Usuario usuario) throws SQLException {
-      String sql = "select * from usuarios where nome = ? and senha = ? ";        
+              String sql = "select * from usuarios where nome = ? and senha = ? ";        
        
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);
@@ -52,8 +49,10 @@ public class JdbcUsuarioDao {
             // TODO Auto-generated catch block
             e.printStackTrace();
             throw new RuntimeException(e);
-        }     
-    }
+        }       
+     
+    }   
+    
 }
 //if(userName.equals(request.getParameter("user"))
 //&& passwrd.equals(request.getParameter("pass"))){
