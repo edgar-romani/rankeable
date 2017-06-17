@@ -1,8 +1,4 @@
-<%-- 
-    Document   : tela-principal
-    Created on : 09/06/2017, 19:46:57
-    Author     : helio
---%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
